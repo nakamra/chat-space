@@ -15,14 +15,13 @@ ChatSpaceのDB設計
 |:-----:|:-----:|:-----:|:-----:|
 | name | string | false   |add_index :name |
 | e-mail | string | false |add_index :e-mail, unique: true|
-| password | string | false |add_index :password  |
+| password | string | false ||
 
 ####groups table
 | column | type | null |key |
 |:-----:|:-----:|:-----:|:-----:|
-| group_name | string |false ||
-| message_id | integer |false |t.references :message, foreign_key: true|
-| user_id   | integer | false |t.references :user, foreign_key: true|
+| name | string |false |
+
 
 ####groups_users table
 | column | type | null |key |
