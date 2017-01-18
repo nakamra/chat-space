@@ -1,3 +1,4 @@
+@import "./clearfix";
 // chat-spaceの左側部分
 .chat-side {
   float: left;
@@ -7,6 +8,7 @@
 }
 // user name 表示部分
 .chat-user {
+  @include clearfix();
   height: 100px;
   padding: 20px;
   color: #fff;
