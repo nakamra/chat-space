@@ -1,0 +1,40 @@
+html {
+  height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: "Hiragino Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica,Arial, sans-serif;
+    color: #434a54;
+    background-color: #fafafa;
+}
+
+.chat {
+  min-width: 980px;
+  height: 100%;
+}
+
+.notice {
+  height: 30px;
+  background-color: #38AEF0;
+  color: #fff;
+  text-align: center;
+}
+
+.notification {
+  flex: 1;
+}
+
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
