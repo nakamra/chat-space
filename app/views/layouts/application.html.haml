@@ -27,14 +27,14 @@
                     Hello World!
         .chat-main
           .chat-header.clearfix
-            .chat-header--left
+            .chat-header__group
               %h2 group1
-              %p.chat-header__users
+              %p.chat-header__members
                 Members:
-                %span.chat-header__user
+                %span.chat-header__member
                   nakamra
-            .chat-header--right
-              %a.chat-header__edit-btn Edit
+            .chat-header__edit
+              %a.chat-header__edit--btn Edit
           .chat-body
             %ul.chat-messages
               -(1..3).each do |i|
@@ -50,4 +50,4 @@
                 %textarea{row: '1', placeholder: 'type a message'}
                 .chat-footer__icon
                   %i.fa.fa-image
-              %input.submit-btn{type: 'submit', value: 'SEND'}
+              %input.chat-footer__submit-btn{type: 'submit', value: 'SEND'}

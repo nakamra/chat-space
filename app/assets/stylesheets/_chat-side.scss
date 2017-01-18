@@ -39,12 +39,12 @@
     display: block;
     padding: 20px;
     color: #fff;
-    .chat-group__name {
+    &__name {
       display: inline-block;
       font-size: 15px;
       padding-bottom: 5px;
     }
-    .chat-group__message {
+    &__message {
       font-size: 11px;
       overflow: hidden;
       text-overflow: ellipsis;
