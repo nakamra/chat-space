@@ -1,15 +1,15 @@
+@import "./variable";
 // chat-spaceの右側部分
 .chat-main {
   float: left;
   position: relative;
   width: calc(100% - 300px);
-  height:100%;
+  height: 100%;
 }
 
 // groupname menbers edit-btn 表示部分
 .chat-header {
-  padding-right: 40px;
-  padding-left: 40px;
+  padding: 0 40px;
   background-color: #fff;
   border-bottom: 1px solid #eee;
   .chat-header--left {
@@ -27,7 +27,7 @@
       font-size: 12px;
       color: #999999;
       .chat-header__user{
-        margin-left:3px
+        margin-left: 3px
       }
     }
   }
@@ -36,8 +36,7 @@
     .chat-header__edit-btn {
       display: inline-block;
       margin: 28px 0;
-      padding-right:20px;
-      padding-left:20px;
+      padding: 0 20px;
       line-height: 40px;
       font-size: 14px;
       color: $LightBlueColor;
@@ -70,11 +69,11 @@
           float: left;
           margin-left: 10px;
           color:#aaa;
-          font-size:12px;
+          font-size: 12px;
         }
       }
       .chat-message__body {
-        font-size:14px;
+        font-size: 14px;
       }
     }
   }
@@ -83,10 +82,10 @@
 // type a meesage and send 表示部分
 .chat-footer {
   position: absolute;
-  right:0;
+  right: 0;
   left: 0;
-  bottom:0;
-  padding:20px 40px;
+  bottom: 0;
+  padding: 20px 40px;
   background-color: #ddd;
   .chat-footer__body {
     float: left;
@@ -95,7 +94,7 @@
     position: relative;
     textarea {
       width: 100%;
-      height:50px;
+      height: 50px;
       padding: 15px 10px;
       line-height: 20px;
       border: none;
@@ -110,7 +109,7 @@
       display: inline-block;
       width: 40px;
       height: 50px;
-      line-height:50px;
+      line-height: 50px;
       text-align: center;
       cursor: pointer;
     }
