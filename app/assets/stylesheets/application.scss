@@ -3,10 +3,6 @@
 @import "./chat-main";
 @import "font-awesome";
 
-.chat {
-  min-width: 980px;
-  height: 100%;
-}
 html {
   height: 100%;
 }
@@ -20,8 +16,24 @@ body {
     background-color: #fafafa;
 }
 
+.chat {
+  min-width: 980px;
+  height: 100%;
+}
+
+.notice {
+  height: 30px;
+  background-color: #38AEF0;
+  color: #fff;
+  text-align: center;
+}
+
+.notification {
+  flex: 1;
+}
+
 textarea {
-  color: inherit;
+  
 }
 .clearfix:after {
     content: '';

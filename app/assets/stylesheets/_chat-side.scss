@@ -1,11 +1,11 @@
-
+// chat-spaceの左側部分
 .chat-side {
   float: left;
   height: 100%;
   width: 300px;
   background-color: #2f3e51;
 }
-
+// user name 表示部分
 .chat-user {
   height: 100px;
   padding: 20px;
@@ -29,7 +29,7 @@
     }
   }
 }
-
+// groupname 表示部分
 .chat-groups {
   margin: 0;
   padding: 0;
