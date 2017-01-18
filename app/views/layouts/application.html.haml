@@ -6,4 +6,46 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    = yield
+    .chat
+      .chat-side
+        .chat-user.clearfix
+          %h5
+            nakamra
+          .chat-user__icons
+            %a.chat-user__icon
+              %i.fa.fa-pencil-square-o
+            %a.chat-user__icon
+              %i.fa.fa-cog
+        %ul.chat-groups
+          -(1..3).each do |i|
+            %li.chat-group
+              %a.chat-group__link
+                %p.chat-group__name group #{i}
+                %p.chat-group__message
+                  Hello World!
+      .chat-main
+        .chat-header.clearfix
+          .chat-header--left
+            %h2 group1
+            %p.chat-header__users
+              Members:
+              %span.chat-header__user
+                nakamra
+          .chat-header--right
+            %a.chat-header__edit-btn Edit
+        .chat-body
+          %ul.chat-messages
+            -(1..3).each do |i|
+              %li.chat-message
+                .chat-message__header.clearfix
+                  %p.chat-message__name nakamra
+                  %p.chat-message__time 2017/01/17 15:55
+                %p.chat-message__body Hello World
+        .chat-footer
+          %form.new-message{}
+            %input{name: 'utf8', type: 'hidden'}
+            .chat-footer__body
+              %textarea{row: '1', placeholder: 'type a message'}
+              .chat-footer__icon
+                %i.fa.fa-image
+            %input.submit-btn{type: 'submit', value: 'SEND'}

@@ -1,0 +1,140 @@
+.chat-main {
+  float: left;
+  position: relative;
+  width: calc(100% - 300px);
+  height:100%;
+}
+
+.chat-header {
+  padding-right: 40px;
+  padding-left: 40px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  .chat-header--left {
+    float:left;
+  }
+}
+
+.chat-header--left {
+  float:left;
+}
+.chat-header--right {
+  float: right;
+}
+.chat-header h2 {
+  margin-top: 20px;
+  line-height: 50px;
+  letter-spacing: 2px;
+  color: #333;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.chat-header .chat-header__users {
+  line-height: 20px;
+  font-size: 12px;
+  color: #999999;
+}
+
+.chat-header .chat-header__user{
+  margin-left:3px
+}
+
+.chat-header__edit-btn {
+  display: inline-block;
+  margin: 28px 0;
+  padding-right:20px;
+  padding-left:20px;
+  line-height: 40px;
+  font-size: 14px;
+  color: #38AEF0;
+  border: 2px solid;
+}
+.chat-body {
+  position: relative;
+  padding: 46px 0;
+  height: calc(100%-190px);
+
+}
+
+.chat-body .chat-messages {
+  position: absolute;
+  right: 40px;
+  left: 40px;
+  padding: 0;
+  list-style: none;
+}
+
+.chat-body .chat-message {
+  margin-bottom: 40px;
+}
+
+.chat-body .chat-message .chat-message__header {
+  line-height: 20px;
+}
+
+.chat-body .chat-message  .chat-message__name {
+  float: left;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.chat-body .chat-message  .chat-message__time {
+  float: left;
+  margin-left: 10px;
+  color:#aaa;
+  font-size:12px;
+}
+
+.chat-body .chat-message .chat-message__body {
+  font-size:14px;
+}
+
+.chat-footer {
+  position: absolute;
+  right:0;
+  left: 0;
+  bottom:0;
+  padding:20px 40px;
+  background-color: #ddd;
+}
+
+.chat-footer__body {
+  float: left;
+  width: calc(100% - 115px);
+  height: 50px;
+  position: relative;
+}
+
+.chat-footer__body textarea{
+  width: 100%;
+  height:50px;
+  padding: 15px 10px;
+  line-height: 20px;
+  border: none;
+  resize: none;
+}
+.chat-footer__icon {
+  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  width: 40px;
+  height: 50px;
+  line-height:50px;
+  text-align: center;
+  cursor: pointer;
+}
+.chat-footer .submit-btn {
+  float: left;
+  display: inline-block;
+  width: 100px;
+  line-height: 50px;
+  margin-left: 15px;
+  color: #fff;
+  background-color: #38AEF0;
+  border: none;
+  padding: 0;
+  text-align: center;
+}
