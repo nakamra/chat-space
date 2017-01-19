@@ -1,0 +1,58 @@
+// chat-spaceの左側部分
+.chat-side {
+  float: left;
+  height: 100%;
+  width: 300px;
+  background-color: #2f3e51;
+}
+// user name 表示部分
+.chat-user {
+  @include clearfix();
+  height: 100px;
+  padding: 20px;
+  color: $WhiteColor;
+  background-color: #253141;
+  h5 {
+    float: left;
+    line-height: 60px;
+    letter-spacing: 2px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  &__icons {
+    float: right;
+    .chat-user__icon{
+      display: inline-block;
+      margin: 15px 0 15px 3px;
+      line-height: 28px;
+      color: $WhiteColor;
+      font-size: 20px;
+    }
+  }
+}
+// groupname 表示部分
+.chat-groups {
+  margin: 0;
+  padding: 0;
+  color: $WhiteColor;
+  list-style: none;
+  .chat-group__link{
+    display: block;
+    padding: 20px;
+    color: $WhiteColor;
+    .chat-group__name {
+      display: inline-block;
+      font-size: 15px;
+      padding-bottom: 5px;
+    }
+    .chat-group__message {
+      font-size: 11px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  .chat-group__link:hover {
+    background-color: #384a62;
+  }
+}
