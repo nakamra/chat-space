@@ -4,7 +4,7 @@
     margin: 60px auto;
     padding: 60px;
     background-color: $WhiteColor;
-    border: 1px solid $GrayColor;
+    border: 1px solid $LightGrayColor;
     border-radius: 5px;
 
     .account-page__inner--left, .account-page__inner--right {
@@ -43,7 +43,7 @@
     .btn {
       margin-top: 20px;
       color: $WhiteColor;
-      background-color: #ccc;
+      background-color: $GrayColor;
       font-size: 14px;
     }
   }
@@ -118,7 +118,7 @@
 #error_explanation {
   margin: 20px 0;
   padding: 20px 30px;
-  border: 1px solid $GrayColor;
+  border: 1px solid $LightGrayColor;
   border-radius: 2px;
 
   h2 {
