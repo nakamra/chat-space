@@ -1,4 +1,3 @@
-@import "./variable";
 html {
   height: 100%;
 }
@@ -18,10 +17,11 @@ body {
 }
 
 .notice {
-  height: 30px;
-  background-color: $LightBlueColor;
-  color: #fff;
+  line-height: 30px;
+  letter-spacing: 1pt;
   text-align: center;
+  color: $WhiteColor;
+  background-color: $LightBlueColor;
 }
 
 .notification {
