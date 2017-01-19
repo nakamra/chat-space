@@ -1,10 +1,11 @@
+@import "./variable";
 .account-page {
   .account-page__inner {
     width: 980px;
     margin: 60px auto;
     padding: 60px;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background-color: $WhiteColor;
+    border: 1px solid $GrayColor;
     border-radius: 5px;
 
     .account-page__inner--left, .account-page__inner--right {
@@ -30,7 +31,7 @@
         display: block;
         width: 60px;
         margin-top: 5px;
-        border-bottom: 1px solid #38aef0;
+        border-bottom: 1px solid $LightBlueColor;
       }
     }
 
@@ -42,7 +43,7 @@
 
     .btn {
       margin-top: 20px;
-      color: #fff;
+      color: $WhiteColor;
       background-color: #ccc;
       font-size: 14px;
     }
@@ -85,14 +86,14 @@
   input[type='submit'] {
     float: left;
     margin-top: 20px;
-    color: #fff;
-    background-color: #38aef0;
+    color: $WhiteColor;
+    background-color: $LightBlueColor;
   }
 
   .field-label {
     .field_with_errors {
       display: inline-block;
-      color: #d65f4c;
+      color: $ErrorRedColor;
       font-weight: 400;
     }
   }
@@ -109,7 +110,7 @@
         right: 0;
         bottom: 0;
         width: 5px;
-        background-color: #d65f4c;
+        background-color: $ErrorRedColor;
       }
     }
   }
@@ -118,12 +119,12 @@
 #error_explanation {
   margin: 20px 0;
   padding: 20px 30px;
-  border: 1px solid #ddd;
+  border: 1px solid $GrayColor;
   border-radius: 2px;
 
   h2 {
     margin-bottom: 10px;
-    color: #d65f4c;
+    color: $ErrorRedColor;
     font-size: 14px;
   }
 
