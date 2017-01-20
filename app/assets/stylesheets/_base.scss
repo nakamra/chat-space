@@ -22,6 +22,9 @@ body {
   text-align: center;
   color: $WhiteColor;
   background-color: $LightBlueColor;
+  .alert{
+    background-color: $ErrorRedColor;
+  }
 }
 
 .notification {
