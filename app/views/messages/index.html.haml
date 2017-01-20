@@ -8,7 +8,7 @@
         .chat-user__icons
           %a.chat-user__icon
             %i.fa.fa-pencil-square-o
-          %a.chat-user__icon
+          = link_to edit_user_registration_path, class: 'chat-user__icon' do
             %i.fa.fa-cog
       %ul.chat-groups
         -(1..3).each do |i|
