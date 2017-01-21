@@ -1,3 +1,8 @@
 - flash.each do |key,value|
-  %div{class: "alert alert--#{key}"}
-    = value
+  - if key == notice
+    %div{class: "alert alert--notice"}
+  - elsif key == alert
+    %div{class: "alert alert--alert"}
+  - else
+    %div{class: "alert alert--#{key}"}
+      = value
