@@ -6,8 +6,5 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    .top-bar
-      - flash.each do |key,value|
-        %div{class: "alert alert--#{key}"}
-          =value
+    = render 'layouts/flash-messages'
     = yield

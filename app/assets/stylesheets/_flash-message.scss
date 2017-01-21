@@ -1,12 +1,14 @@
-.top-bar {
+.alert {
   line-height: 30px;
   letter-spacing: 1pt;
   text-align: center;
   color: $WhiteColor;
-  .alert--notice {
+}
+
+.alert--notice {
   background-color: $LightBlueColor;
-  }
-  .alert--alert {
+}
+
+.alert--alert {
    background-color: $ErrorRedColor;
-  }
 }
