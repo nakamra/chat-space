@@ -16,22 +16,18 @@ body {
   height: 100%;
 }
 
-.notice {
+.top-bar {
   line-height: 30px;
   letter-spacing: 1pt;
   text-align: center;
   color: $WhiteColor;
+  .alert--notice {
   background-color: $LightBlueColor;
+  }
+  .alert--alert {
+   background-color: $ErrorRedColor;
+  }
 }
-
-.alert {
-  line-height: 30px;
-  letter-spacing: 1pt;
-  text-align: center;
-  color: $WhiteColor;
-  background-color: $ErrorRedColor;
-}
-
 
 .notification {
   flex: 1;
