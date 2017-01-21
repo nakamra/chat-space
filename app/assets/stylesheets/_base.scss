@@ -22,10 +22,16 @@ body {
   text-align: center;
   color: $WhiteColor;
   background-color: $LightBlueColor;
-  .alert{
-    background-color: $ErrorRedColor;
-  }
 }
+
+.alert {
+  line-height: 30px;
+  letter-spacing: 1pt;
+  text-align: center;
+  color: $WhiteColor;
+  background-color: $ErrorRedColor;
+}
+
 
 .notification {
   flex: 1;
