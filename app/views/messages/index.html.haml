@@ -5,7 +5,7 @@
         %h5
           nakamra
         .chat-user__icons
-          %a.chat-user__icon
+          = link_to new_group_path, class: 'chat-user__icon' do
             %i.fa.fa-pencil-square-o
           = link_to edit_user_registration_path, class: 'chat-user__icon' do
             %i.fa.fa-cog
