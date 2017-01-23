@@ -3,7 +3,7 @@
     .chat-side
       .chat-user
         %h5
-          nakamra
+          = current_user.name
         .chat-user__icons
           = link_to new_group_path, class: 'chat-user__icon' do
             %i.fa.fa-pencil-square-o
