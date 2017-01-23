@@ -19,7 +19,8 @@
     .chat-main
       .chat-header
         .chat-header__group
-          %h2 group1
+          %h2
+          - group.current_user.name
           %p.chat-header__members
             Members:
             %span.chat-header__member
