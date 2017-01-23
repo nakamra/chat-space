@@ -6,27 +6,15 @@
         = f.label :name, "グループ名", class: "group-form__label"
       .group-form__field--right
         = f.text_field :name, placeholder: "グループ名を入力してください", class: "group-form__input"
-    -# .group-form__field.clearfix
-    -#   .group-form__field--left
-    -#     .group-form__label
-    -#       = f.label :group_チャットメンバーを追加, "チャットメンバーを追加"
-    -#   .group-form__field--right
-    -#     .group-form__search.clearfix
-    -#       #user-search-field
-          -# = f.search_field :user,:name, placeholder: "追加したいユーザー名を入力してください", type: "text", class: "group-form__input"
-          -# = f.label :users
-          -# = collection_check_boxes(:group, :user_ids, User.all, :id, :name) do |b|
-          -#   = b.label {b.check_box + b.text }
-        #user-search-result
-    -# .group-form__field.clearfix
-    -#   .group-form__field--left
-    -#     .group-form__label
-    -#       = f.label :group_チャットメンバー, "チャットメンバー"
-    -#   .group-form__field--right
-    -#     #group-users
-          -# #group-user-22.group-user.clearfix
-          -#   %input{name: "group[user_ids][]", type: "hidden", value: "22"}/
-          -#   %p.group-user__name seo_kyohei
+    .group-form__field.clearfix
+      .group-form__field--left
+        .group-form__label
+          = f.label :group_チャットメンバーを追加, "チャットメンバー"
+      .group-form__field--right
+        .group-form__search.clearfix
+          #user-search-field
+          = collection_check_boxes(:group, :user_ids, User.all, :id, :name) do |b|
+            = b.label {b.check_box + b.text }
     .group-form__field.clearfix
       .group-form__field--left
       .group-form__field--right
