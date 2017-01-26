@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
   def new
     @group = Group.new
+    @users = User.where.not(id: current_user.id)
   end
 
   def index
@@ -9,9 +10,11 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
+    @group.users << current_user
     if @group.save
       redirect_to root_path, notice: "チャットグループが作成されました"
     else
+      @users = User.where.not(id: current_user.id)
       render "new"
     end
   end

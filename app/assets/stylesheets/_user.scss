@@ -120,6 +120,7 @@
   padding: 20px 30px;
   border: 1px solid $LightGrayColor;
   border-radius: 2px;
+  text-align: center;
 
   h2 {
     margin-bottom: 10px;
@@ -130,7 +131,7 @@
   ul {
     margin: 0;
     padding-left: 17px;
-    list-style: square;
+    list-style: none;
   }
 
   li {
