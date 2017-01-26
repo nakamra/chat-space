@@ -1,44 +1,4 @@
 .notification
   .chat
-    .chat-side
-      .chat-user
-        %h5
-          = current_user.name
-        .chat-user__icons
-          = link_to new_group_path, class: 'chat-user__icon' do
-            %i.fa.fa-pencil-square-o
-          = link_to edit_user_registration_path, class: 'chat-user__icon' do
-            %i.fa.fa-cog
-      %ul.chat-groups
-        - @groups.each do |group|
-          %li.chat-group
-            = link_to group_messages_path(group.id), class: "chat-group__link" do
-              %p.chat-group__name #{group.name}
-              %p.chat-group__message Winter is Coming!
-    .chat-main
-      .chat-header
-        .chat-header__group
-          %h2 #{@group.name}
-          %p.chat-header__members
-            Members:
-            %span.chat-header__member
-            - @group.groups_users.each do |group_user|
-              = group_user.user.name
-        .chat-header__edit
-          %a.chat-header__edit--btn Edit
-      .chat-body
-        %ul.chat-messages
-          -(1..3).each do |i|
-            %li.chat-message
-              .chat-message__header
-                %p.chat-message__name nakamra
-                %p.chat-message__time 2017/01/17 15:55
-              %p.chat-message__body Hello World
-      .chat-footer
-        %form.new-message{}
-          %input{name: 'utf8', type: 'hidden'}
-          .chat-footer__body
-            %textarea{row: '1', placeholder: 'type a message'}
-            .chat-footer__icon
-              %i.fa.fa-image
-          %input.chat-footer__submit-btn{type: 'submit', value: 'SEND'}
+    = render "/layouts/chat_side"
+    = render "/layouts/chat_main"
