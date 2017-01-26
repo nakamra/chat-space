@@ -1,6 +1,6 @@
-= render "/layouts/error-messages"
 .group-form
   %h1 新規チャットグループ
+  = render "/layouts/error-messages"
   = form_for @group do |f|
     .group-form__field.clearfix
       .group-form__field--left
@@ -14,7 +14,7 @@
       .group-form__field--right
         .group-form__search.clearfix
           #user-search-field
-          = collection_check_boxes(:group, :user_ids, User.all, :id, :name) do |b|
+          = collection_check_boxes(:group, :user_ids, @users, :id, :name) do |b|
             = b.label {b.check_box + b.text }
     .group-form__field.clearfix
       .group-form__field--left
