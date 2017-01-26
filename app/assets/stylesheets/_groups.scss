@@ -1,4 +1,4 @@
-.chat-group-form {
+.group-form {
   width: 980px;
   margin: 60px auto;
   padding: 40px;
@@ -13,7 +13,7 @@
     text-align: center;
   }
 
-  .chat-group-form__errors {
+  .group-form__errors {
     margin: 30px 0;
     padding: 20px 40px;
     border: 1px solid $LightGrayColor;
@@ -39,10 +39,10 @@
     }
   }
 
-  .chat-group-form__field {
+  .group-form__field {
     margin-top: 30px;
 
-    .chat-group-form__field--left {
+    .group-form__field--left {
       float: left;
       width: 30%;
       padding-right: 20px;
@@ -50,19 +50,19 @@
       box-sizing: border-box;
     }
 
-    .chat-group-form__field--right {
+    .group-form__field--right {
       float: right;
       width: 70%;
     }
 
-    .chat-group-form__label {
+    .group-form__label {
       display: block;
       line-height: 50px;
       font-weight: bold;
       text-align: right;
     }
 
-    .chat-group-form__input {
+    .group-form__input {
       float: left;
       width: 100%;
       line-height: 30px;
@@ -71,32 +71,33 @@
     }
   }
 
-  .chat-group-user {
+  .group-user {
     padding: 0 15px;
     line-height: 50px;
     font-size: 14px;
     border-bottom: 1px solid $LightGrayColor;
 
-    .chat-group-user__name {
+    .group-user__name {
       float: left;
     }
 
-    .chat-group-user__btn {
+    .group-user__btn {
       float: right;
       display: inline-block;
       cursor: pointer;
 
-      &.chat-group-user__btn--add {
+      &.group-user__btn--add {
         color: $LightBlueColor;
       }
 
-      &.chat-group-user__btn--remove {
+      &.group-user__btn--remove {
         color: $RedColor;
       }
     }
   }
 
-  .chat-group-form__action-btn {
+  .group-form__action-btn {
+    margin-top: 30px;
     display: inline-block;
     padding: 12px 20px;
     color: $WhiteColor;

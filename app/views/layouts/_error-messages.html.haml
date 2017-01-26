@@ -1,0 +1,8 @@
+- if @group.errors.any?
+  #error_explanation
+    %h2
+      = @group.errors.count
+      件のエラーがあります。
+    %ul
+      - @group.errors.full_messages.each do |msg|
+        %li= msg

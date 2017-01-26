@@ -1,0 +1,11 @@
+.chat-header
+  .chat-header__group
+    %h2
+      = @group.name
+    %p.chat-header__members
+      Members:
+      %span.chat-header__member
+      - @group.groups_users.each do |group_user|
+        = group_user.user.name
+  .chat-header__edit
+    %a.chat-header__edit--btn Edit
