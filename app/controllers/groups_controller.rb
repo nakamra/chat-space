@@ -9,9 +9,14 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
-    if @group.save
+    if @group.name.present? && @group.user_ids.present?
+      @group.save
       redirect_to root_path, notice: "チャットグループが作成されました"
+    elsif @group.name.present?
+      flash[:alert] = "ユーザーを選択してください"
+      render "new"
     else
+      flash[:alert] = "グループ名を入力してください"
       render "new"
     end
   end
