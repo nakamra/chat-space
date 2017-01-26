@@ -1,0 +1,7 @@
+%ul.chat-groups
+  - @groups.each do |group|
+    %li.chat-group
+      = link_to group_messages_path(group.id), class: "chat-group__link" do
+        %p.chat-group__name
+          = group.name
+        %p.chat-group__message Winter is Coming!
