@@ -1,4 +1,5 @@
 class GroupsController < ApplicationController
+  before_action :set_group, only: [:edit, :update]
   def new
     @group = Group.new
     @users = User.where.not(id: current_user.id)
@@ -20,14 +21,11 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.new
-    @users = User.where.not(id: current_user.id)
   end
 
   def update
-    @group = Group.new(group_params)
-    if @group.save
-      redirect_to root_path, notice: "チャットグループが編集されました"
+    if @group.update(group_params)
+      redirect_to group_messages_path(@group.id), notice: "チャットグループが編集されました"
     else
       @users = where.not(id: current_user.id)
       render "edit"
@@ -35,8 +33,11 @@ class GroupsController < ApplicationController
   end
 
   private
-
   def group_params
     params.require(:group).permit(:name,  {user_ids: []})
+  end
+
+  def set_group
+    @group = Group.find(params[:id])
   end
 end
