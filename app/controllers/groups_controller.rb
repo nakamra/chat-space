@@ -19,6 +19,11 @@ class GroupsController < ApplicationController
     end
   end
 
+  def edit
+    @group = Group.new
+    @users = User.where.not(id: current_user.id)
+  end
+
   private
 
   def group_params
