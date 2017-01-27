@@ -24,6 +24,16 @@ class GroupsController < ApplicationController
     @users = User.where.not(id: current_user.id)
   end
 
+  def update
+    @group = Group.new(group_params)
+    if @group.save
+      redirect_to root_path, notice: "チャットグループが編集されました"
+    else
+      @users = where.not(id: current_user.id)
+      render "edit"
+    end
+  end
+
   private
 
   def group_params
