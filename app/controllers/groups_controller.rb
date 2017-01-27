@@ -27,7 +27,6 @@ class GroupsController < ApplicationController
     if @group.update(group_params)
       redirect_to group_messages_path(@group.id), notice: "チャットグループが編集されました"
     else
-      @users = where.not(id: current_user.id)
       render "edit"
     end
   end
