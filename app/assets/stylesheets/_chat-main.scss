@@ -1,5 +1,5 @@
 // chat-spaceの右側部分
-.chat-main {
+.chat .chat-main {
   float: left;
   position: relative;
   width: calc(100% - 300px);
@@ -9,9 +9,11 @@
 // groupname menbers edit-btn 表示部分
 .chat-header {
   @include clearfix();
+  height: 100px;
   padding: 0 40px;
   background-color: $WhiteColor;
   border-bottom: 1px solid #eee;
+  box-sizing: border-box;
   &__group {
     float:left;
     h2 {
@@ -47,14 +49,11 @@
 
 // chat-mesages-body 表示部分
 .chat-body {
-  position: relative;
-  padding: 46px 0;
-  height: calc(100%-190px);
+  height: calc(100% - 100px);
+  overflow: auto;
   .chat-messages {
-    position: absolute;
-    right: 40px;
-    left: 40px;
-    padding: 0;
+    height: calc(100% - 90px);
+    padding: 46px 40px;
     list-style: none;
     .chat-message {
       margin-bottom: 40px;
@@ -93,7 +92,7 @@
     width: calc(100% - 115px);
     height: 50px;
     position: relative;
-    textarea {
+    .textarea {
       width: 100%;
       height: 50px;
       padding: 15px 10px;
