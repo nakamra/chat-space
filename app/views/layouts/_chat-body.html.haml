@@ -1,12 +1,12 @@
 .chat-body
   %ul.chat-messages
     - @messages.each do |message|
-      - if current_user.id == message.user_id && @group.id == message.group_id
-        %li.chat-message
-          .chat-message__header
-            %p.chat-message__name
-              = current_user.name
-            %p.chat-message__time
-              = message.created_at
-          %p.chat-message__body
-            = message.body
+      %li.chat-message
+        .chat-message__header
+          %p.chat-message__name
+            - if message.user.present?
+              = message.user.name
+          %p.chat-message__time
+            = message.created_at
+        %p.chat-message__body
+          = message.body
