@@ -49,11 +49,11 @@
 
 // chat-mesages-body 表示部分
 .chat-body {
-  height: calc(100% - 100px);
+  height: calc(100% - 190px);
   overflow: auto;
   .chat-messages {
     height: calc(100% - 90px);
-    padding: 46px 40px;
+    padding: 40px 40px;
     list-style: none;
     .chat-message {
       margin-bottom: 40px;
@@ -81,6 +81,7 @@
 
 // type a meesage and send 表示部分
 .chat-footer {
+  height: 90px;
   position: absolute;
   right: 0;
   left: 0;
