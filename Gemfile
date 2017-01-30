@@ -38,8 +38,8 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-doc'
   gem 'pry-byebug'
-  gem 'rspec-rails', "~> 3.1.0"
-  gem 'factory_girl_rails', "~> 4.4.1"
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
 
 group :development do
