@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: [:edit, :update]
+  
   def new
     @group = Group.new
     @users = User.where.not(id: current_user.id)
