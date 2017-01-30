@@ -37,5 +37,10 @@ describe User do
       user.valid?
       expect(user.errors[:password][0]).to include("は8文字以上に設定して下さい。")
     end
+
+    it "is valid with a nickname, email, password, password_confirmation" do
+      user = build(:user)
+      expect(user).to be_valid
+    end
   end
 end
