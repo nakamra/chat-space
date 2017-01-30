@@ -1,7 +1,0 @@
-.chat-footer
-  = form_for [@group,@message], class: "new-message" do |f|
-    .chat-footer__body
-      = f.text_field :body, placeholder: "type a message", class: "textarea"
-      .chat-footer__icon
-        %i.fa.fa-image
-    = f.submit "SEND", class: "chat-footer__submit-btn"

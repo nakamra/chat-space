@@ -1,4 +1,26 @@
-.chat-main
-  = render "/layouts/chat-header"
-  = render "/layouts/chat-body"
-  = render "/layouts/chat-footer"
+.wrapper
+  = render "/layouts/chat-side"
+  .chat-main
+    .chat-header
+      .chat-header__group
+        %h2
+          = @group.name
+        %p.chat-header__members
+          Members:
+          %span.chat-header__member
+          - @group.groups_users.each do |group_user|
+            = group_user.user.name
+      .chat-header__edit
+        %a
+        = link_to edit_group_path(@group.id), class: "chat-header__edit--btn" do
+          Edit
+    .chat-body
+      - @messages.each do |message|
+        = render partial: "/layouts/message", locals: { message: message }
+    .chat-footer
+      = form_for [@group,@message], class: "new-message" do |f|
+        .chat-footer__body
+          = f.text_field :body, placeholder: "type a message", class: "textarea"
+          .chat-footer__icon
+            %i.fa.fa-image
+        = f.submit "SEND", class: "chat-footer__submit-btn"
