@@ -24,5 +24,12 @@ describe User do
       user.valid?
       expect(user.errors[:password_confirmation]).to include("が内容とあっていません。")
     end
+
+    it "is invalid with a duplicate email address" do
+      user = create(:user)
+      another_user = build(:user, email: user.email)
+      another_user.valid?
+      expect(another_user.errors[:email]).to include("は既に使用されています。")
+    end
   end
 end
