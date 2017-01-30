@@ -5,3 +5,5 @@
     %p.chat-group__message
       - if group.messages.present?
         = group.messages.last[:body]
+      - else
+        %p まだメッセージはありません
