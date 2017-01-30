@@ -5,5 +5,5 @@
         %p.chat-group__name
           = group.name
         %p.chat-group__message
-          - group.messages.last(1).each do |group_message|
-            = group_message.body
+          - if group.messages.present?
+            = group.messages.last[:body]
