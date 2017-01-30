@@ -4,20 +4,16 @@ html {
 body {
     height: 100%;
     margin: 0;
-    display: flex;
-    flex-direction: column;
     font-family: "Hiragino Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica,Arial, sans-serif;
     color: #434a54;
     background-color: #fafafa;
 }
 
-.chat {
+.wrapper {
   min-width: 980px;
   height: 100%;
-}
-
-.notification {
-  flex: 1;
+  display: flex;
+  flex-direction: row;
 }
 
 *, *:before, *:after {

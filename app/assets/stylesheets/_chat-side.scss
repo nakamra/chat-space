@@ -36,7 +36,10 @@
   padding: 0;
   color: $WhiteColor;
   list-style: none;
+  overflow: auto;
+  height: calc(100% - 100px);
   .chat-group__link{
+    text-decoration: none;
     display: block;
     padding: 20px;
     color: $WhiteColor;

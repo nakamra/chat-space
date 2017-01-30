@@ -1,5 +1,6 @@
 .group-form
   %h1 チャットグループ編集
+  = render "shared/error-messages"
   = form_for(@group, url: group_path(@group), html: {method: "patch"}) do |f|
     .group-form__field.clearfix
       .group-form__field--left
