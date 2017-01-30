@@ -8,16 +8,14 @@
         %p.chat-header__members
           Members:
           %span.chat-header__member
-          - @group.groups_users.each do |group_user|
-            = render partial: "messages/group_user", locals: { group_user: group_user }
+          = render partial: "messages/groups_user", collection: @group.groups_users
       .chat-header__edit
         %a
         = link_to edit_group_path(@group.id), class: "chat-header__edit--btn" do
           Edit
     .chat-body
       %ul.chat-messages
-        - @messages.each do |message|
-          = render partial: "messages/message", locals: { message: message }
+        = render @messages
     .chat-footer
       = form_for [@group,@message], class: "new-message" do |f|
         .chat-footer__body

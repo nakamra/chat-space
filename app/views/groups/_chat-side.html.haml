@@ -8,5 +8,4 @@
       = link_to edit_user_registration_path, class: 'chat-user__icon' do
         %i.fa.fa-cog
   %ul.chat-groups
-    - @groups.each do |group|
-      = render partial: "groups/chat-groups", locals: { group: group }
+    = render @groups
