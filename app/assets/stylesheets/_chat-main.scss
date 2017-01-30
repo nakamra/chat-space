@@ -1,5 +1,4 @@
-// chat-spaceの右側部分
-.chat .chat-main {
+.chat-main {
   float: left;
   position: relative;
   width: calc(100% - 300px);
@@ -53,7 +52,7 @@
   overflow: auto;
   .chat-messages {
     height: calc(100% - 90px);
-    padding: 40px 40px;
+    padding: 40px;
     list-style: none;
     .chat-message {
       margin-bottom: 40px;
