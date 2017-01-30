@@ -1,0 +1,9 @@
+%li.chat-message
+  .chat-message__header
+    %p.chat-message__name
+      - if message.user.present?
+        = message.user.name
+    %p.chat-message__time
+      = message.created_at
+  %p.chat-message__body
+    = message.body
