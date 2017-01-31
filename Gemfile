@@ -38,6 +38,8 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-doc'
   gem 'pry-byebug'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
 
 group :development do
@@ -48,8 +50,10 @@ group :development do
   gem 'spring'
 end
 
+group :test do
+  gem 'faker'
+end
+
 gem "haml-rails", "~> 0.9"
-
 gem "font-awesome-rails"
-
 gem 'devise'
