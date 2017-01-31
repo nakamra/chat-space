@@ -1,6 +1,12 @@
 require 'rails_helper'
 describe User do
   describe '#create' do
+
+    it "is valid with a nickname, email, password, password_confirmation" do
+      user = build(:user)
+      expect(user).to be_valid
+    end
+    
     it "is invalid without a name" do
       user = build(:user, name: "")
       user.valid?
@@ -36,11 +42,6 @@ describe User do
       user = build(:user, password: "1234567", password_confirmation: "1234567")
       user.valid?
       expect(user.errors[:password][0]).to include("は8文字以上に設定して下さい。")
-    end
-
-    it "is valid with a nickname, email, password, password_confirmation" do
-      user = build(:user)
-      expect(user).to be_valid
     end
   end
 end
