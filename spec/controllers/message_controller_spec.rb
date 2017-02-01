@@ -13,6 +13,11 @@ describe MessagesController, type: :controller do
     end
 
     it "renders the :index template" do
+      group = create(:group)
+      user = create(:user)
+      message = create(:message, group_id: group.id, user_id: user.id)
+      get :index, params: {id: message, group_id: group.id, user_id: user.id}
+      expect(response).to render_template :index
     end
   end
 end
