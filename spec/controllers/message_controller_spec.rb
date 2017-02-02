@@ -5,6 +5,8 @@ describe MessagesController, type: :controller do
   let(:groups) {create_list(:group, 3, user_ids: user.id)}
   let(:messages) {create_list(:message, 3, group_id: group.id, user_id: user.id)}
   let(:user) { create(:user)}
+  let(:message) {create(:message).attributes}
+
 
   describe 'GET #index' do
     before do
@@ -31,7 +33,11 @@ describe MessagesController, type: :controller do
 
   describe 'POST #create' do
     context "with valid attributes" do
-      it "saves the new @message in the datebase"
+      it "saves the new @message in the datebase" do
+        expect{
+        post :create, params: {group_id: group.id, message: message}
+        }.to change(Message, :count).by(1)
+      end
       it "redirect_to messages#index"
       end
     context "with invalid attributes" do
