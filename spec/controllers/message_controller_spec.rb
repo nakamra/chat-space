@@ -60,6 +60,8 @@ describe MessagesController, type: :controller do
       end
 
       it "render the :index template" do
+        post :create, params: {group_id: group.id, message: invalid_message}
+        expect(response).to render_template :index
       end
     end
   end
