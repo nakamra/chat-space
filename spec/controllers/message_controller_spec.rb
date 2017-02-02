@@ -32,14 +32,21 @@ describe MessagesController, type: :controller do
   end
 
   describe 'POST #create' do
+    before do
+        login_user user
+        post :create, params: {group_id: group.id, message: message}
+      end
     context "with valid attributes" do
       it "saves the new @message in the datebase" do
         expect{
         post :create, params: {group_id: group.id, message: message}
         }.to change(Message, :count).by(1)
       end
-      it "redirect_to messages#index"
+      it "redirect_to messages#index" do
+        expect(response).to redirect_to group_messages_path(group.id)
       end
+    end
+
     context "with invalid attributes" do
       it "does not save the new @message in the databse"
       it "render the :index template"
