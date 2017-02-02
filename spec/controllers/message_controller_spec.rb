@@ -5,7 +5,8 @@ describe MessagesController, type: :controller do
   let(:groups) {create_list(:group, 3, user_ids: user.id)}
   let(:messages) {create_list(:message, 3, group_id: group.id, user_id: user.id)}
   let(:user) { create(:user)}
-  let(:message) {create(:message).attributes}
+  let(:message) {build(:message).attributes}
+  let(:invalid_message) {build(:invalid_message).attributes}
 
 
   describe 'GET #index' do
@@ -34,23 +35,32 @@ describe MessagesController, type: :controller do
   describe 'POST #create' do
     before do
         login_user user
-        post :create, params: {group_id: group.id, message: message}
       end
+
     context "with valid attributes" do
+
       it "saves the new @message in the datebase" do
         expect{
         post :create, params: {group_id: group.id, message: message}
         }.to change(Message, :count).by(1)
       end
+
       it "redirect_to messages#index" do
+        post :create, params: {group_id: group.id, message: message}
         expect(response).to redirect_to group_messages_path(group.id)
       end
     end
 
     context "with invalid attributes" do
-      it "does not save the new @message in the databse"
-      it "render the :index template"
-    end
 
+      it "does not save the new @message in the databse" do
+        expect{
+          post :create, params: {group_id: group.id, message: invalid_message}
+        }.not_to change(Message, :count)
+      end
+
+      it "render the :index template" do
+      end
+    end
   end
 end
