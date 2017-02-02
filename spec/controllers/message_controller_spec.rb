@@ -3,7 +3,10 @@ require 'rails_helper'
 describe MessagesController, type: :controller do
   let(:group) {create(:group)}
   let(:user) { create(:user)}
-
+  before do
+  allow(controller).to receive(:current_user).and_return(user)
+  end
+  
   describe 'GET #index' do
     before do
         login_user
