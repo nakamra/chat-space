@@ -5,13 +5,10 @@ describe MessagesController, type: :controller do
   let(:groups) {create_list(:group, 3, user_ids: user.id)}
   let(:messages) {create_list(:message, 3, group_id: group.id, user_id: user.id)}
   let(:user) { create(:user)}
-  before do
-  allow(controller).to receive(:current_user).and_return(user)
-  end
 
   describe 'GET #index' do
     before do
-        login_user
+        login_user user
         get :index, params: {group_id: group.id}
       end
 
