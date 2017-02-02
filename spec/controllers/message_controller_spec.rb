@@ -26,10 +26,21 @@ describe MessagesController, type: :controller do
       it "インスタンス変数@messagesは期待した値になるか？" do
         expect(assigns(:messages)).to match(messages)
       end
-      
+
       it "renders the :index template" do
         expect(response).to render_template :index
       end
+  end
+
+  describe 'POST #create' do
+    context "with valid attributes" do
+      it "saves the new @message in the datebase"
+      it "redirect_to messages#index"
+      end
+    context "with invalid attributes" do
+      it "does not save the new @message in the databse"
+      it "render the :index template"
+    end
 
   end
 end
