@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   before_action :set_variables
-  
+
   def index
     @message = Message.new
   end
