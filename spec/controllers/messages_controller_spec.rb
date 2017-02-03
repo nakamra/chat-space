@@ -8,7 +8,6 @@ describe MessagesController, type: :controller do
   let(:message) {build(:message).attributes}
   let(:invalid_message) {build(:invalid_message).attributes}
 
-
   describe 'GET #index' do
     before do
         login_user user
