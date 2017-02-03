@@ -15,15 +15,15 @@ describe MessagesController, type: :controller do
         get :index, params: {group_id: group.id}
       end
 
-      it "assigns the requested contact to @group？" do
+      it "assigns the requested contact to @group" do
         expect(assigns(:group)).to eq group
       end
 
-      it "assigns the requested contact to @groups？" do
+      it "assigns the requested contact to @groups" do
         expect(assigns(:groups)).to match(groups)
       end
 
-      it "assigns the requested contact to @messages？" do
+      it "assigns the requested contact to @messages" do
         expect(assigns(:messages)).to match(messages)
       end
 
