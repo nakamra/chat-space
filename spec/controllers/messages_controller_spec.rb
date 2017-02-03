@@ -4,7 +4,7 @@ describe MessagesController, type: :controller do
   let(:group) {create(:group)}
   let(:groups) {create_list(:group, 3, user_ids: user.id)}
   let(:messages) {create_list(:message, 3, group_id: group.id, user_id: user.id)}
-  let(:user) { create(:user)}
+  let(:user) {create(:user)}
   let(:message) {build(:message).attributes}
   let(:invalid_message) {build(:invalid_message).attributes}
 
@@ -15,15 +15,15 @@ describe MessagesController, type: :controller do
         get :index, params: {group_id: group.id}
       end
 
-      it "インスタンス変数@groupは期待した値になるか？" do
+      it "assigns the requested contact to @group？" do
         expect(assigns(:group)).to eq group
       end
 
-      it "インスタンス変数@groupsは期待した値になるか？" do
+      it "assigns the requested contact to @groups？" do
         expect(assigns(:groups)).to match(groups)
       end
 
-      it "インスタンス変数@messagesは期待した値になるか？" do
+      it "assigns the requested contact to @messages？" do
         expect(assigns(:messages)).to match(messages)
       end
 
@@ -38,30 +38,39 @@ describe MessagesController, type: :controller do
       end
 
     context "with valid attributes" do
-
+      subject {
+        Proc.new {post :create, params: {group_id: group.id, message: message}}
+      }
       it "saves the new @message in the datebase" do
         expect{
-        post :create, params: {group_id: group.id, message: message}
+          subject.call
         }.to change(Message, :count).by(1)
       end
 
       it "redirect_to messages#index" do
-        post :create, params: {group_id: group.id, message: message}
+        subject.call
         expect(response).to redirect_to group_messages_path(group.id)
       end
     end
 
     context "with invalid attributes" do
-
+      subject {
+        Proc.new {post :create, params: {group_id: group.id, message: invalid_message}}
+      }
       it "does not save the new @message in the databse" do
         expect{
-          post :create, params: {group_id: group.id, message: invalid_message}
+          subject.call
         }.not_to change(Message, :count)
       end
 
       it "render the :index template" do
-        post :create, params: {group_id: group.id, message: invalid_message}
+        subject.call
         expect(response).to render_template :index
+      end
+
+      it "alert message should be present" do
+        subject.call
+        expect(flash[:alert]).to be_present
       end
     end
   end
