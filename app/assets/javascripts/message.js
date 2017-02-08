@@ -44,6 +44,7 @@ $(function() {
         textField.val('');
       },
       function(data) {
+        alert('メッセージを入力してください')
     });
   });
 });
