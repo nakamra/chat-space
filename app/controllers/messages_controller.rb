@@ -7,14 +7,14 @@ class MessagesController < ApplicationController
 
   def create
     @message = current_user.messages.new(message_params)
-    if @message.save
-      respond_to do |format|
+    respond_to do |format|
+      if @message.save
         format.html { redirect_to group_messages_path }
-        format.json { render "message", formats: :json, handlers: :jbuilder }
+        format.json { render "message", handlers: :jbuilder }
+      else
+        format.html { render :index }
+        format.json { render json: @message.errors, status: :unprocessable_entity }
       end
-    else
-      flash.now[:alert] = "メッセージを入力してください"
-      render :index
     end
   end
 
