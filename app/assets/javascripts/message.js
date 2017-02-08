@@ -18,10 +18,11 @@ $(function() {
   }
 
   function scrollToBottom() {
-    $('.chat-body').scrollTop($('.chat-messages').height());
+    $(".chat-body").scrollTop($(".chat-messages")[0].scrollHeight);
   }
 
   $('#new_message').on('submit', function(e) {
+    $('input[type="submit"]').removeAttr('data-disable-with');
     e.preventDefault();
     var textField = $('#message_body')
     var message = textField.val();
@@ -35,17 +36,14 @@ $(function() {
       },
       dataType: 'json'
     })
-    .done(function(data) {
-      console.log(data);
-      var html = buildHTML(data);
-      $('.chat-messages').append(html);
-
-      scrollToBottom();
-
-      textField.val('');
-    })
-    .fail(function() {
-      alert('error');
+    .then(
+      function(data) {
+        var html = buildHTML(data);
+        $('.chat-messages').append(html);
+        scrollToBottom();
+        textField.val('');
+      },
+      function(data) {
     });
   });
 });
