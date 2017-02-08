@@ -17,7 +17,7 @@
       %ul.chat-messages
         = render @messages
     .chat-footer
-      = form_for [@group,@message], class: "new-message" do |f|
+      = form_for [@group,@message] do |f|
         .chat-footer__body
           = f.text_field :body, placeholder: "type a message", class: "textarea"
           .chat-footer__icon
