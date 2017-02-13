@@ -1,0 +1,6 @@
+- unless user.id == current_user.id
+  .group-user
+    = hidden_field :group, :name, type: "hidden", name: "group[user_ids][]", value: "#{user.id}"
+    .group-user__name
+    =  user.name
+    .group-user__btn.group-user__btn--remove 削除
