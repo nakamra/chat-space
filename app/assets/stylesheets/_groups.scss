@@ -9,6 +9,7 @@
   box-sizing: border-box;
 
   h1 {
+    font-weight: bold;
     letter-spacing: 2px;
     font-size: 24px;
     text-align: center;
@@ -42,6 +43,7 @@
 
   .group-form__field {
     margin-top: 30px;
+    height: 54px;
 
     .group-form__field--left {
       float: left;
@@ -73,6 +75,7 @@
   }
 
   .group-user {
+    @include clearfix();
     padding: 0 15px;
     line-height: 50px;
     font-size: 14px;
@@ -98,7 +101,6 @@
   }
 
   .group-form__action-btn {
-    margin-top: 30px;
     display: inline-block;
     padding: 12px 20px;
     color: $WhiteColor;
