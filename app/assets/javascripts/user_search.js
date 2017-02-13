@@ -1,29 +1,25 @@
 
 $(function() {
-  
+
 // 検索したユーザーをHTMLで表示
   function searchHTML(user) {
     var html =
       '<div class="group-user">' +
-      '<p class="group_user__name">' +
-      user.name  +
-      '<a class="group-user__btn group-user__btn--add" data-user-name="' + user.name + '" data-user-id="' + user.id + '">追加' +
-      '</a>' +
-      '</p>' +
+        '<p class="group_user__name">' + user.name  +
+          '<a class="group-user__btn group-user__btn--add" data-user-name="' + user.name + '" data-user-id="' + user.id + '">追加' + '</a>' +
+        '</p>' +
       '</div>';
     return html;
   }
 
 // 追加するユーザーのHTML
-  function addUserHTML(user_id,user_name) {
+  function addUserHTML(user_id, user_name) {
     var html =
       '<div class="group-user">' +
-      '<input type="hidden" name="group[user_ids][]" value="' + user_id + '">' +
-      '<p class="group_user__name">' +
-      user_name  +
-      '<a class="group-user__btn group-user__btn--remove">削除' +
-      '</a>' +
-      '</p>' +
+        '<input type="hidden" name="group[user_ids][]" value="' + user_id + '">' +
+          '<p class="group_user__name">' +  user_name  +
+            '<a class="group-user__btn group-user__btn--remove">削除' + '</a>' +
+          '</p>' +
       '</div>';
     return html;
   }
@@ -41,7 +37,7 @@ $(function() {
       .then(
         function(json) {
           var resultHTML = "";
-          $.each(json, function(i,user) {
+          $.each(json, function(i, user) {
             resultHTML += searchHTML(user);
           });
           $('#user-search-result').html(resultHTML);
@@ -56,8 +52,7 @@ $(function() {
   $('#user-search-result').on('click', '.group-user__btn--add', function() {
     var user_id = $(this).data('userId');
     var user_name = $(this).data('userName');
-
-    var appendHTML = addUserHTML(user_id,user_name);
+    var appendHTML = addUserHTML(user_id, user_name);
 
     $('#group-users').append(appendHTML);
 
