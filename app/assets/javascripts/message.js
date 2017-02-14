@@ -1,20 +1,19 @@
 $(function() {
-  
+
   function buildHTML(message) {
-    if (message.image) {
-    var imageHtml = '<br>' + '<img src="' + message.image +'">';
-  } else {
     var imageHtml = "";
+    if (message.image) {
+      imageHtml = `<br><img src="${message.image}">`;
     }
 
-    var html =
-    '<li class="chat-message">' +
-      '<div class="chat-message__header">' +
-        '<p class="chat-message__name">' + message.name + '</p>' +
-        '<p class="chat-message__time">' + message.time + '</p>' +
-      '</div>' +
-      '<p class="chat-message__body">' + message.body + imageHtml + '</p>' +
-    '</li>';
+    var html = `
+      <li class="chat-message">
+        <div class="chat-message__header">
+          <p class="chat-message__name">${message.name}</p>
+          <p class="chat-message__time">${message.time}</p>
+        </div>
+        <p class="chat-message__body">${message.body} ${imageHtml}</p>
+      </li>`;
     return html;
   }
 
@@ -22,9 +21,10 @@ $(function() {
     $(".chat-body").scrollTop($(".chat-messages")[0].scrollHeight);
   }
 
-  $('#new_message').on('submit', function(e) {
-    $('.chat-footer__submit-btn').removeAttr('data-disable-with');
+  $('form#new_message').on('submit', function(e) {
     e.preventDefault();
+    e.stopPropagation();
+    var form = $(this);
     var fd = new FormData($(this).get(0));
     $.ajax({
       type: 'POST',
@@ -39,7 +39,7 @@ $(function() {
         var html = buildHTML(json)
         $('.chat-messages').append(html);
         scrollToBottom();
-        $('#message_body').val("");
+        form.get(0).reset();
       },
       function(data) {
         alert('メッセージを入力してください')
