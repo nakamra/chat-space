@@ -20,6 +20,7 @@
       = form_for [@group,@message] do |f|
         .chat-footer__body
           = f.text_field :body, placeholder: "type a message", class: "textarea"
-          .chat-footer__icon
+          %label.chat-footer__icon
+            = f.file_field :image
             %i.fa.fa-image
         = f.submit "SEND", class: "chat-footer__submit-btn"
