@@ -6,3 +6,6 @@
       = message.created_at.strftime('%m/%d %H:%M:%S')
   %p.chat-message__body
     = message.body
+    - if message.image?
+      %br
+      = image_tag message.image.url
