@@ -45,4 +45,8 @@ $(function() {
     });
     return false;
   });
+
+    setInterval(function() {
+      
+    }, 1000);
 });
