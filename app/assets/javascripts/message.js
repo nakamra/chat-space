@@ -25,7 +25,7 @@ $(function() {
     e.preventDefault();
     e.stopPropagation();
     var form = $(this);
-    var fd = new FormData($(this).get(0));
+    var fd = new FormData(form.get(0));
     $.ajax({
       type: 'POST',
       url: 'messages.json',
