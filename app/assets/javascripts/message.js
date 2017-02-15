@@ -54,12 +54,14 @@ $(function() {
       })
       .then(
         function(json) {
-          var reloadHTML = "";
+          if(json !== null){
+          var appendHTML = "";
           $.each(json, function(i,message) {
-            reloadHTML += buildHTML(message);
+            appendHTML += buildHTML(message);
           });
-          $('.chat-messages').html(reloadHTML);
+          $('.chat-messages').append(appendHTML);
           scrollToBottom();
+          }
         });
     }, 1000);
 });
