@@ -53,6 +53,13 @@ $(function() {
         dataType: 'json'
       })
       .then(
+        function(json) {
+          var reloadHTML = "";
+          $.each(json, function(i,message) {
+            reloadHTML += buildHTML(message);
+          });
+          $('.chat-messages').html(reloadHTML);
+          scrollToBottom();
         });
     }, 1000);
 });
