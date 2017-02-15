@@ -47,6 +47,12 @@ $(function() {
   });
 
     setInterval(function() {
-      
+      $.ajax({
+        type: 'GET',
+        url: $form.prop('action'),
+        dataType: 'json'
+      })
+      .then(
+        });
     }, 1000);
 });
