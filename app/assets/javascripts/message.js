@@ -1,5 +1,4 @@
 $(function() {
-
   function buildHTML(message) {
     var imageHtml = "";
     if (message.image) {
@@ -21,14 +20,14 @@ $(function() {
     $(".chat-body").scrollTop($(".chat-messages")[0].scrollHeight);
   }
 
-  $('form#new_message').on('submit', function(e) {
+  var $form = $('form#new_message');
+
+  $form.on('submit', function(e) {
     e.preventDefault();
-    e.stopPropagation();
-    var form = $(this);
-    var fd = new FormData(form.get(0));
+    var fd = new FormData($form.get(0));
     $.ajax({
       type: 'POST',
-      url: 'messages.json',
+      url: $form.prop('action'),
       data: fd,
       processData: false,
       contentType: false,
@@ -39,10 +38,30 @@ $(function() {
         var html = buildHTML(json)
         $('.chat-messages').append(html);
         scrollToBottom();
-        form.get(0).reset();
+        $form.get(0).reset();
       },
-      function(data) {
+      function(json) {
         alert('メッセージを入力してください')
     });
+    return false;
   });
+
+    setInterval(function() {
+      $.ajax({
+        type: 'GET',
+        url: $form.prop('action'),
+        dataType: 'json'
+      })
+      .then(
+        function(json) {
+          if(json !== null){
+          var appendHTML = "";
+          $.each(json, function(i,message) {
+            appendHTML += buildHTML(message);
+          });
+          $('.chat-messages').append(appendHTML);
+          scrollToBottom();
+          }
+        });
+    }, 1000);
 });
