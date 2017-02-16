@@ -3,7 +3,4 @@
     %p.chat-group__name
       = group.name
     %p.chat-group__message
-      - if group.messages.present?
-        = group.last_message
-      - else
-        まだメッセージはありません
+      = group.last_message
