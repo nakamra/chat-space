@@ -3,24 +3,22 @@ $(function() {
 
 // 検索したユーザーをHTMLで表示
   function searchHTML(user) {
-    var html =
-      '<div class="group-user">' +
-        '<p class="group_user__name">' + user.name  +
-          '<a class="group-user__btn group-user__btn--add" data-user-name="' + user.name + '" data-user-id="' + user.id + '">追加' + '</a>' +
-        '</p>' +
-      '</div>';
+    var html =`
+      <div class="group-user">
+        <p class="group-user__name">${user.name}</p>
+        <a class="group-user__btn group-user__btn--add" data-user-name="${user.name}" data-user-id="${user.id}">追加</a>
+      </div>`;
     return html;
   }
 
 // 追加するユーザーのHTML
   function addUserHTML(user_id, user_name) {
-    var html =
-      '<div class="group-user">' +
-        '<input type="hidden" name="group[user_ids][]" value="' + user_id + '">' +
-          '<p class="group_user__name">' +  user_name  +
-            '<a class="group-user__btn group-user__btn--remove">削除' + '</a>' +
-          '</p>' +
-      '</div>';
+    var html =`
+      <div class="group-user">
+        <input type="hidden" name="group[user_ids][]" value="${user_id}">
+          <p class="group-user__name">${user_name}</p>
+          <a class="group-user__btn group-user__btn--remove">削除</a>
+      </div>`;
     return html;
   }
 
