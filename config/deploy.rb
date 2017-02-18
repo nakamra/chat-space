@@ -7,6 +7,8 @@ set :branch, 'Fix_for_Capistrano'
 
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
+set :keep_releases, 5
+
 set :rbenv_type, :user
 set :rbenv_ruby, '2.3.1'
 
